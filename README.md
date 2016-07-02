@@ -1,7 +1,8 @@
 # Angular TDD w/ Karma, Mocha, Chai, Istanbul Coverage
 
-#Gulp Tasks
-gulp serve start
+##Install Dependencies
+run `npm install` <br/>
+run `bower install`
 
 ### Gup Tasks 
 
