@@ -44,6 +44,31 @@ describe("The Starter App", function() {
     });
   });
 
+  describe('The CamelCase Controller', function() {
+
+    beforeEach(function() {
+      module('starter');
+      inject(function($injector) {
+        camelCase         = $injector.get('$filter')('camelCase');
+      });
+    });
+
+    it('it should camel case a String', function() {
+        expect(camelCase('nav sandhu')).to.equal('Nav Sandhu');
+        expect(camelCase('satish kris')).to.equal('Satish Kris');
+    });
+
+    it('it should take a number and return as a String', function() {
+        expect(camelCase(123)).to.equal('123');
+    });
+
+    it('it should throw an error when input is not a string or number', function() {
+        assert.throws(function() {
+          camelCase(undefined);
+        });
+    });
+  });
+
 });
 
 

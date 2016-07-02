@@ -20,3 +20,14 @@ starter.service('ContactsService', function($http) {
 starter.controller('ContactController', function($scope, ContactsService) {
   $scope.contacts = ContactsService.contacts;
 });
+
+
+starter.filter('camelCase', function() {
+  return function(name) {
+    var type = typeof name;
+    if (type !== 'string' && type !== 'number') throw new Error();
+    return name.toString().split(" ").map(function(word) {
+      return word[0].toUpperCase().concat(word.slice(1));
+    }).join(" ");
+  };
+});
