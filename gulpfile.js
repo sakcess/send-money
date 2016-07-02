@@ -1,8 +1,10 @@
 var gulp            = require('gulp');
 var browserSync     = require('browser-sync');
 var karma           = require('karma').Server;
+var Server          = require('gulp-live-server');
 
-gulp.task('serve',function() {
+
+gulp.task('serve', ['server'] ,function() {
 
   browserSync.init({
       notify  : false,
@@ -40,9 +42,28 @@ gulp.task('test',function() {
 });
 
 
-gulp.task('karma',  function() {
+gulp.task('karma',  function(done) {
   karma.start({
     configFile  : __dirname + '/karma.conf.js',
     singleRun   : true,
+    reporters   : ['mocha', 'coverage'],
+  }, function(){
+    done();
   });
+});
+
+gulp.task('coverage', ['karma'],function() {
+
+  browserSync.init({
+      notify  : false,
+      port    : 7777,
+      server  : {
+        baseDir : ['test/coverage']
+      }
+  });
+});
+
+gulp.task('server', function() {
+  var live =  new Server('server.js');
+  live.start();
 });
