@@ -1,0 +1,23 @@
+{
+  "name": "angular-tdd-starter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Satish Kris <skris232@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "mocha": "^2.5.3",
+    "chai": "^3.5.0"
+  }
+}
