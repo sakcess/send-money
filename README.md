@@ -4,7 +4,7 @@
 run `npm install` <br/>
 run `bower install`
 
-### Gup Tasks 
+### Gulp Tasks 
 
 #### Generate and Serve Code Coverage Metrics
 To generate and then view your code coverage report, run `gulp coverage`
