@@ -35,7 +35,7 @@ describe("The Starter App", function() {
       });
     });
 
-    it('it should store an array of contacts in scope', function() {
+    it('should store an array of contacts in scope', function() {
         $controller('ContactController', {
           $scope            : $scope,
           ContactsService   : ContactsService
@@ -53,20 +53,39 @@ describe("The Starter App", function() {
       });
     });
 
-    it('it should camel case a String', function() {
+    it('should camel case a String', function() {
         expect(camelCase('nav sandhu')).to.equal('Nav Sandhu');
         expect(camelCase('satish kris')).to.equal('Satish Kris');
     });
 
-    it('it should take a number and return as a String', function() {
+    it('should take a number and return as a String', function() {
         expect(camelCase(123)).to.equal('123');
     });
 
-    it('it should throw an error when input is not a string or number', function() {
+    it('should throw an error when input is not a string or number', function() {
         assert.throws(function() {
           camelCase(undefined);
         });
     });
+  });
+
+  describe('The Avatar Directive', function() {
+
+    beforeEach(function() {
+      module('starter');
+    });
+
+    it('should display the capitalized first letter of Name', function() {
+        inject(function($compile, $rootScope) {
+        $rootScope.contact = { name: 'nav sandhu'};
+        var element = $compile('<avatar name=contact.name/>')($rootScope);
+        $rootScope.$digest();
+        var dirText = element.text();
+
+        expect(dirText).to.equal('N');
+      });
+    });
+
   });
 
 });
