@@ -1,8 +1,10 @@
 var gulp            = require('gulp');
 var browserSync     = require('browser-sync');
 var karma           = require('karma').Server;
+var Server          = require('gulp-live-server');
 
-gulp.task('serve',function() {
+
+gulp.task('serve', ['server'] ,function() {
 
   browserSync.init({
       notify  : false,
@@ -45,4 +47,10 @@ gulp.task('karma',  function() {
     configFile  : __dirname + '/karma.conf.js',
     singleRun   : true,
   });
+});
+
+
+gulp.task('server', function() {
+  var live =  new Server('server.js');
+  live.start();
 });
