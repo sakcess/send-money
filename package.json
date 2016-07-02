@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.13.0",
+    "cors": "^2.7.1",
     "gulp": "^3.9.1",
     "karma": "^1.1.0",
     "karma-mocha": "^1.1.1",
