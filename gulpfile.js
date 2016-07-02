@@ -44,6 +44,5 @@ gulp.task('karma',  function() {
   karma.start({
     configFile  : __dirname + '/karma.conf.js',
     singleRun   : true,
-    reporters    : ['mocha']
   });
 });

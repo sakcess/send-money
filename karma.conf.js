@@ -3,6 +3,7 @@ module.exports = function(config) {
     plugins     : ['karma-mocha','karma-phantomjs-launcher','karma-mocha-reporter'],
     browsers    : ['PhantomJS'],
     frameworks  : ['mocha'],
+    reporters   : ['mocha'],
     files       : [
       'bower_components/angular/angular.js',
       'bower_components/chai/chai.js',
