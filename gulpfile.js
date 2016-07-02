@@ -42,13 +42,26 @@ gulp.task('test',function() {
 });
 
 
-gulp.task('karma',  function() {
+gulp.task('karma',  function(done) {
   karma.start({
     configFile  : __dirname + '/karma.conf.js',
     singleRun   : true,
+    reporters   : ['mocha', 'coverage'],
+  }, function(){
+    done();
   });
 });
 
+gulp.task('coverage', ['karma'],function() {
+
+  browserSync.init({
+      notify  : false,
+      port    : 7777,
+      server  : {
+        baseDir : ['test/coverage']
+      }
+  });
+});
 
 gulp.task('server', function() {
   var live =  new Server('server.js');
