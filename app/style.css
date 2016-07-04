@@ -1,0 +1,14 @@
+#from-input .amount, #to-input .amount {
+  margin: 0 auto;
+  padding-right: 0px;
+}
+
+#from-input .currency-sel, #to-input .currency-sel {
+  /*width: 85%;*/
+  padding-left: 0px;
+}
+
+
+#from-input input, #to-input input {
+  width: 100%;
+}

@@ -1,0 +1,17 @@
+<button type="button" class="btn btn-primary btn-lg btn-block" ng-click="FBLogin()">Sign In with Facebook</button>
+<br>
+<div ng-show="connectionStatus === 'connected'">
+    <div class="table-responsive">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>{{user.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-success" ng-click="proceedToEnterReceiverInfo()">Proceed to enter Receiver Details</button>
+    </div>
+</div>
+<br>
+<button type="button" class="btn btn-info" ng-click="goToHomePage()">Go Back</button>

@@ -1,0 +1,76 @@
+<div>
+    <form action="">
+        <!--  From  -->
+        <div id="from-input" class="row">
+            <!-- <div class="col-xs-12 col-sm-12">
+                    <label for="">From</label>
+                </div> -->
+            <div class="col-xs-12 col-sm-12">
+                <div class="col-sm-9 col-xs-9 amount">
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="From" ng-model="fromValue" ng-keyup="doConvertTo()">
+                </div>
+                <div class="col-sm-3 col-xs-3 currency-sel">
+                    <select ng-model="fromType" class="form-control" required ng-change="doConvertTo()" ng-options="k for (k, v) in rates track by v">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!--  From  -->
+        <div id="to-input" class="row">
+            <!-- <div class="col-xs-12 col-sm-12">
+                    <label for="">To</label>
+                </div> -->
+            <div class="col-xs-12 col-sm-12">
+                <div class="col-sm-9 col-xs-9 amount">
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="To" ng-model="toValue" ng-keyup="doConvertFrom()">
+                </div>
+                <div class="col-sm-3 col-xs-3 currency-sel">
+                    <select ng-model="toType" class="form-control" required ng-change="doConvertFrom()" ng-options="k for (k, v) in rates track by v">
+                        <option value="">Select</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="rate-info" ng-if="fromValue.length > 0 || toValue.length > 0">
+            <!-- Exchange Rate : 1 {{fromCurrency}} equals {{exchangeRate}} {{toCurrency}} -->
+            <div>
+                Note: Assumptions made
+                <ul>
+                    <li> Service Fee is standard 15.00 AUD</li>
+                    <li> Standard time to process is 1 Day</li>
+                </ul>
+            </div>
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <td>Sending</td>
+                            <td>{{fromValue}} {{fromCurrency}}</td>
+                        </tr>
+                        <tr>
+                            <td>Exchange Rate</td>
+                            <td>1 {{fromCurrency}} ~= {{exchangeRate}} {{toCurrency}}</td>
+                        </tr>
+                        <tr>
+                            <td>Receive</td>
+                            <td>{{toValue}} {{toCurrency}}</td>
+                        </tr>
+                        <tr>
+                            <td>Service Fee</td>
+                            <td>15 AUD</td>
+                        </tr>
+                        <tr>
+                            <td>Time</td>
+                            <td>1 Day</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btn btn-success btn-lg btn-block"
+            ng-click="signIn()">Send Money</button>
+        </div>
+    </form>
+</div>

@@ -4,7 +4,7 @@ var karma           = require('karma').Server;
 var Server          = require('gulp-live-server');
 
 
-gulp.task('serve', ['server'] ,function() {
+gulp.task('serve', [] ,function() {
 
   browserSync.init({
       notify  : false,
