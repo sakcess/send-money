@@ -1,4 +1,4 @@
-# Angular TDD w/ Karma, Mocha, Chai, Istanbul Coverage
+# Angular Send Money
 
 ##Install Dependencies
 run `npm install` <br/>
